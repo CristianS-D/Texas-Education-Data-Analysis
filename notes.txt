@@ -1,0 +1,8 @@
+Features worth considering that are usually in TEA data:
+
+Per-pupil expenditure
+Teacher turnover rate***
+Average teacher salary relative to district size
+Admin to teacher ratio
+Chronic absenteeism rate
+Class size variance (not just ratio)
