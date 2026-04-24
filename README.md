@@ -41,19 +41,34 @@ To define these "statistical peers," I intend to utilize a K-Nearest Neighbors (
     To more accurately tell how the schools are performing and compare them on the same playing field, we can better assess if a school district is growing realtive to it true peers. 
 
 
-### On Clustering School Districts, Frustration, and Why I'm Still Doing This
+### Clustering Texas School Districts; A Work in Progress
+I've worked with education data for about a year and a half, and something I've felt intuitively the whole time is that there are better ways to benchmark school districts than what's currently used. This project is my attempt to find out if I'm right.
+The Question
 
-I have worked with education data for going on nearly a year and a half now, and something I felt very intuitively based on what I've seen is that there are better ways to cluster these school districts.
+If you group school districts by operational and demographic factors; teacher pay, teacher experience, student-teacher ratio, per-pupil spending, and others I'm still working through; do meaningful clusters emerge? And if they do, what can we learn from them?
+The benchmarking angle was the original motivation, but the more I work on this, the more I think the real value might be elsewhere: identifying which districts do a lot with a little, understanding what separates high-performers from low-performers within a cluster, and finding the levers that could actually lift the lowest-performing schools.
 
-I started out by downloading STAAR data for school districts in Texas from 2013 to 2025, and cleaned those up, merged them, spent a lot of time cleaning and doing a lot of feature engineering; mostly to learn pandas and data science along the way; spending sometimes weeks on learning statistics and Bayesian statistics, statistical methods that I learned after a couple days were obsolete. But again, it being a side project, I'm very okay with that because I have no deadline.
-This is something I work on. I work with student data in a full-time job, but this question and my method of how I wanted to get there were not something I felt I'd be able to successfully pitch to an organization, and have the right amount of time allocation for. Mostly because I'm relatively new to pandas in any competent sense. And I wanted the ability to express myself and my interests very freely in my studies and journey. I think a lot of pressure that corporations put on people takes away the ability for an artist or a scientist or any competent individual to dance or play. They're required to work within a rigid framework that doesn't really allow a whole lot of innovation or growth.
+A specific example I keep coming back to: Dallas ISD and a small rural district might spend the same amount per student, but Dallas likely benefits from economies of scale that produce better outcomes. Where's the threshold? What would it take to replicate that?
+The Data
 
-After going on three months of work on this; I started on February 7th and it's April 20th now; I've only had 31 commits. Some weeks I don't work on it, some weeks I work every day after work from when I get home to when I go to bed. It really just depends on my availability and interest level because I have other hobbies and interests, yet this one has taken a significant amount of time. Mostly because I really care about the question. I believe there's a lot to learn from it, both in my professional skill set but also in the question it's answering.
+STAAR performance data for Texas school districts, 2013–2025, downloaded from public sources, cleaned, merged, and feature-engineered over several months. This project has been as much about learning pandas and data science in practice as it has been about answering the question.
+What I've Tried and Learned
 
-Which is: are there better ways to benchmark school districts? From that I think there's more than just benchmarking; what I'm noticing now is benchmarking might not even be the best outcome of this. But are there ways to identify; the questions that come from this as I've been working on it are; if you group school districts based on certain operational and demographic factors, such as how much do they pay teachers, what's their teacher experience, what's the student-teacher ratio, what's the pay per pupil, etc., and I don't know what other features because I'm still working on it as I haven't found any statistically significant groupings or any valuable groupings.
-The highlights of my growth: I've learned the beta-binomial smoothing, z-scores, bimodal distributions, the HHI index if I want to get really granular. I've learned Euclidean distance, which is a concept I've actually already understood for years; I didn't know the formal name. It's not even something I applied computationally, but just in my head. I work three-dimensionally and Euclidean distance is the way I view things in three-dimensional space normally. So it's really cool to put a word to it. Data imputation is another thing I've learned.
+This has been a learning project as much as a research one. Some of the concepts I worked through along the way:
 
-Some of the things I'd like to know: why are certain districts in the groups that I theorize have to exist; and I haven't found them yet. Are any of the groups performing better? Why are they performing better, and how can we apply those lessons to other school districts? Do some schools do exceptionally well with less money? If you look at a school district like Dallas, perhaps they spend the same amount of money per student as a school district in a rural part of Texas, but maybe there are economies of scale and they produce better outcomes because they have more resources and more scale. And what is the threshold that we could use to lift the lowest schools up?
+Beta-binomial smoothing; for stabilizing teacher counts in small districts
+Z-scores and bimodal distributions; exploring the shape of teacher experience variance
+Euclidean distance; the formal name for something I'd been reasoning through intuitively for years
+HHI (Herfindahl-Hirschman Index); used to determine ethnic homogeneity
+Data imputation; handling the gaps that come with real, messy public data
 
-Also, using these cluster methods to see if different benchmarks better represent things.
-As of now I have to take a pause, as my frustration has gone very high and I do not see useful outcomes with the current features I've selected. I will probably be downloading new data sets, cleaning them, and applying those new features I create to the clusterings. I might apply one more month of work to this. But if I don't see anything, I will put the project out and ask if anybody else wants to pick it up. Until then, I think I have one more month.
+A few approaches I explored turned out to be dead ends for this particular problem; which is fine. That's part of it.
+Where It Stands
+
+Honest status: I haven't found meaningful clusters yet with the current feature set. The groupings I've tried so far don't tell a clear story.
+My next step is pulling in new data sources, engineering better features, and running the clustering again with a more informed setup. I've got about a month left of energy I want to put into this before I either find something worth sharing or open it up for others to continue.
+31 commits since February 7th. Some weeks nothing, some weeks every night after work. It's a side project; and because of that there is no deadline tha takes away the ability for play; which is one of the best tools for novel discovery. 
+If You Want to Pick This Up
+If I don't find something meaningful in the next round, I'll publish the full cleaned dataset, feature engineering pipeline, and everything I've tried so far. If this question interests you, reach out.
+
+Work in progress. Last updated April 2025.
